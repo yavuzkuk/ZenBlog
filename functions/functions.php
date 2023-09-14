@@ -642,4 +642,20 @@
         return $result;
     }
 
+    function addCategory($categoryName)
+    {
+        include "db.php";
+        // db.php ile functions.php aynı dizinde olduğu için
+        // böyle bir path verebiliyoruz.
+        $query = "INSERT INTO category(categoryName) VALUES (:categoryName)";
+        // güvenlik sorunları oluşmasın diye prepared sorgular yapıyoruz
+        // yoksa direkt aldığımız değeri query içine de yazabilirdik
+
+        $stmt = $connect->prepare($query);
+        $stmt->execute([":categoryName"=>$categoryName]);
+
+        $result = $stmt->fetchAll();
+        
+        return $result;
+    }
 ?>

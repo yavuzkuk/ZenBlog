@@ -17,6 +17,7 @@
   $contact = "contact-us.php";
   $mainSet = "mainSettings.php";
   $siteIndex = "../../../index.php";
+  $categoryAdd = "categoryAdd.php";
   
 ?>
 

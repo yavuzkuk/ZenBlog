@@ -9,9 +9,9 @@
   {
     $id = $_GET["p"];
   }
-  $adminId = $_SESSION["id"];
-
   $blog = getBlogsById($id);
+  
+  $adminId = $_SESSION["id"];
   $category = getCategory();
 
   $admin = getCurrentAdminUser($adminId);
@@ -26,6 +26,8 @@
   $siteIndex = "../../../index.php";
   $usersTable = "usersTable.php";
   $inbox = "../mailbox/mailbox.php";
+  $categoryAdd = "categoryAdd.php";
+
 
 
 ?>

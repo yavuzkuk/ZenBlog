@@ -1,7 +1,4 @@
 <?php
-
-
-
     if(isset($_POST["editButton"]))
     {
         $blogTitle = (empty($_POST["blogTitle"]) ? $blogTitleErr = "Boş geçilemez" : filter($_POST["blogTitle"]));   
@@ -12,18 +9,11 @@
         $filePic = (($_FILES["showPic"]["size"] == 0 ? "" : $_FILES["showPic"]["name"]));
         $id = $_POST["id"];
 
-        // print_r($_FILES);
-        // echo($filePic);
-        // die();
-
         $whiteList = ["jpg","jpeg","png"];
         if(!empty($filePic))
         {
             $extens = explode(".",$filePic)[1];
             $name = explode(".",$filePic)[0];
-            // print_r($extens);
-            // print_r($name);
-            // die();
 
             if(!in_array($extens,$whiteList))
             {
@@ -49,14 +39,5 @@
                 $_SESSION["color"] = "danger";
             }
         }
-
-
-
     }
-
-
-
-
-
-
 ?>

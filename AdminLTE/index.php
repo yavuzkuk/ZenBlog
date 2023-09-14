@@ -29,6 +29,7 @@
   $siteIndex = "../index.php";
   $inbox = "pages/mailbox/mailbox.php";
   $usersTable = "pages/examples/usersTable.php";
+  $categoryAdd = "pages/examples/categoryAdd.php";
 
   $resultBlogs = getNumbers($id);
   

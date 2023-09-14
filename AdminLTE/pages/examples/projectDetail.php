@@ -18,6 +18,8 @@
   $siteIndex = "../../../index.php";
   $usersTable = "usersTable.php";
   $inbox = "../mailbox/mailbox.php";
+  $categoryAdd = "categoryAdd.php";
+
 
   
  

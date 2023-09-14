@@ -1,43 +1,39 @@
 <?php
 
-  session_start();
-  // print_r($_SESSION);
-  if ($_SESSION["admin"] == "false" || $_SESSION["active"] == 0 || $_SESSION["login"] == "false") {
+    include "../../../functions/functions.php";
+
+    session_start();
+    // print_r($_SESSION);
+    if ($_SESSION["admin"] == "false" || $_SESSION["active"] == 0 || $_SESSION["login"] == "false") {
     header("Location:../../about.php");
     exit();
-  }
-  $blogTitleErr = $blogContentErr = $CategoryErr = $statusErr = $picErr = "";
+    }
+    $blogTitleErr = $blogContentErr = $CategoryErr = $statusErr = $picErr = "";
+    
+    
+    $id = $_SESSION["id"];
 
-  include "projectAddProccess.php";
+    $result = getAdminUser($_SESSION["id"]);
 
-  $id = $_SESSION["id"];
-
-  $result = getAdminUser($_SESSION["id"]);
-
-  // echo "<pre>";
-  // print_r($result);
-  // echo "</pre>";
-  // die();
-
-  $mainPanel = "../../index.php";
-  $author = $result[0]["memberName"];
-  $adminPic = "../../../assets/img/" . $result[0]["userPic"];
-  $projectPage = "projects.php";
-  $adminName = $result[0]["userName"];
-  $profilePage = "profile.php";
-  $projectAdd = "project-add.php";
-  $contact = "contact-us.php";
-  $mainSet = "mainSettings.php";
-  $siteIndex = "../../../index.php";
-  $usersTable = "usersTable.php";
-  $inbox = "../mailbox/mailbox.php";
-  $categoryAdd = "categoryAdd.php";
+    $mainPanel = "../../index.php";
+    $author = $result[0]["memberName"];
+    $adminPic = "../../../assets/img/" . $result[0]["userPic"];
+    $projectPage = "projects.php";
+    $adminName = $result[0]["userName"];
+    $profilePage = "profile.php";
+    $projectAdd = "project-add.php";
+    $contact = "contact-us.php";
+    $mainSet = "mainSettings.php";
+    $siteIndex = "../../../index.php";
+    $usersTable = "usersTable.php";
+    $inbox = "../mailbox/mailbox.php";
+    $categoryAdd = "categoryAdd.php";
 
 
 
-
-  $category = getCategory();
-
+    $category = getCategory();
+    $categoryErr = "";
+    include "categoryAddProcess.php";
 
 
 
@@ -73,8 +69,10 @@
 
     <?php include "../../parts/sidebar.php" ?>
 
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+      <?php include "../../../parts/message.php"?>
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <div class="container-fluid">
@@ -94,12 +92,12 @@
 
       <!-- Main content -->
       <section class="content">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post">
           <div class="row">
             <div class="col-md-8">
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Blog</h3>
+                  <h3 class="card-title">Category</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -110,45 +108,8 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="inputName">Blog Title</label>
-                    <input type="text" id="inputName" class="form-control" name="blogTitle">
-                    <div class="text-danger"><?php echo $blogTitleErr ?></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputDescription">Blog Summary</label>
-                    <input id="inputDescription" class="form-control" rows="4" name="blogSum"></input>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputDescription">Blog Content</label>
-                    <textarea name="editor" id="editor" class="form-control"></textarea>
-                    <div class="text-danger"><?php echo $blogContentErr ?></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="formFile" class="form-label">Picture</label>
-                    <input class="form-control" type="file" id="formFile" name="showPic">
-                    <div class="text-danger"><?php echo $picErr ?></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputStatus">Status</label>
-                    <select id="inputStatus" class="form-control" name="status">
-                      <option selected disabled>Select one</option>
-                      <option value="1">Visible</option>
-                      <option value="-1">Invisible</option>
-                    </select>
-                    <div class="text-danger"><?php echo $statusErr ?></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputStatus">Category</label>
-                    <select id="inputStatus" class="form-control" name="category">
-                      <option selected disabled>Select one</option>
-                      <?php foreach ($category as $cat) : ?>
-                        <option value="<?php echo $cat["id"] ?>"><?php echo $cat["categoryName"] ?></option>
-                      <?php endforeach ?>
-                    </select>
-                    <div class="text-danger"><?php echo $CategoryErr ?></div>
-                  </div>
-                  <div class="form-group">
-                    <b>Author: </b><?php echo $author?>
-                    <input type="text" hidden value="<?php echo $result[0]["id"]?>" name="authorId">
+                    <input type="text" id="inputName" class="form-control" name="categoryName">
+                    <div class="text-danger"><?php echo $categoryErr ?></div>
                   </div>
                   <div class="row">
                     <div class="col-12">

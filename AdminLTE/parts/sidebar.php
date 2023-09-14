@@ -71,10 +71,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="<?php echo $categoryAdd?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Category Add</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?php echo $projectAdd?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Blog Add</p>
                             </a>
+                        </li>
                         <li class="nav-item">
                             <a href="<?php echo $contact?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>

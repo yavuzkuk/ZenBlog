@@ -12,10 +12,6 @@
         $authorId = $_POST["authorId"];
         $picture = ($_FILES["showPic"]["size"] == 0 ? $picErr = "Boş geçilemez" : $_FILES["showPic"]["name"]);
 
-        
-        // print_r($_FILES["showPic"]);
-
-
         if(empty($blogTitleErr) && empty($blogContentErr) && empty($statusErr) && empty($CategoryErr) && empty($picErr))
         {
             $whiteList = ["jpg","jpeg","png"];
@@ -43,24 +39,5 @@
         {
             
         }
-
-
-        // print_r($_POST);
-
-
-
-        // print_r($blogTitle);
-        // echo "<br>";
-        // print_r($blogSum);
-        // echo "<br>";
-        // print_r($blogContent);
-        // echo "<br>";
-        // print_r($category);
-        // echo "<br>";
-        // print_r($status);
-        // echo "<br>";
-
     }
-
-
 ?>

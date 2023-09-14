@@ -1,7 +1,8 @@
 let deleteButton = document.querySelectorAll(".btn-danger");
-
+// class değeri btn-danger olan bütün tagler bulunur
 deleteButton.forEach(function(item){
     item.addEventListener("click",tikla);
+    // bu taglere tek tek click eventi atanır
 })
 
 function tikla(e)
@@ -10,8 +11,7 @@ function tikla(e)
     let number = as.children[0].textContent.trim();
     // id değerini tutar
 
-    // console.log("1");
-    as.remove();
+    as.remove(); // blog değeri silinir
     requestResponse(number,as);
 
     e.preventDefault();
@@ -30,6 +30,3 @@ function requestResponse(number)
     request.open("GET","deleteTry.php?p="+number,true);
     request.send();
 }
-
-
-// console.log(deleteButton);
