@@ -36,12 +36,6 @@
                             <p>Inbox</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="../mailbox/compose.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Compose</p>
-                        </a>
-                    </li>
                 </li>
                 <li class="nav-item menu">
                 <li class="nav-header">Pages</li>
