@@ -42,7 +42,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `companyAboutTitle`, `companyAbout`, `companyMissionTitle`, `companyMission`, `companyTeamTitle`, `companyTeam`) VALUES
-(1, 'Biz güldoş ile ben bir şeyler çözmeye çalışıyoruz.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an ', '', 'Takımımız ile tanışın');
+(1, 'Problem çözmeye çalışıyoruz', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an ', '', 'Takımımız ile tanışın');
 
 -- --------------------------------------------------------
 
@@ -66,11 +66,7 @@ INSERT INTO `blogcomment` (`id`, `blogId`, `userId`, `blogComment`) VALUES
 (2, 2, 1, 'Deneme'),
 (3, 2, 1, 'bUNU DENE BAKALIM'),
 (4, 2, 1, 'alert(1)'),
-(5, 2, 1, 'alert(1)'),
-(6, 2, 1, 'alert(1)'),
-(7, 2, 1, 'alert(1)'),
-(8, 2, 1, 'alert(1)'),
-(9, 2, 1, 'alert(1)');
+
 
 -- --------------------------------------------------------
 
@@ -96,8 +92,8 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `blogTitle`, `blogSummary`, `blogContent`, `blogPic`, `categoryId`, `author`, `visible`, `likeNumber`, `date`) VALUES
-(1, 'Samsunda gezilecek yerler', 'adadasd', 'Samsunda gezilecek yerler. Güldoş ile daha güzel gezilir.Samsunda gezilecek yerler. Güldoş ile daha güzel gezilir.Samsunda gezilecek yerler. Güldoş ile daha güzel gezilir.Samsunda gezilecek yerler. Güldoş ile daha güzel gezilir.Samsunda gezilecek yerler. Güldoş ile daha güzel gezilir.Samsunda gezilecek yerler. Güldoş ile daha güzel gezilir.', '17099e780dcb8b26e8f3cbf9320c4a66.png', 2, 1, 1, 0, '2023-09-07 19:19:57'),
-(2, 'Polonya\'da gezilecek yerler', 'adasdasdsa', 'Güldoşş Polonya\'ya gidiyor. Çabuk gidip gelicek.Güldoşş Polonya\'ya gidiyor. Çabuk gidip gelicek.Güldoşş Polonya\'ya gidiyor. Çabuk gidip gelicek.', '7fd697997c1c31ea4c6715e2ed471ec5.png', 2, 1, 1, 3, '2023-09-09 17:09:41');
+(1, 'Samsunda gezilecek yerler', 'adadasd', 'Samsunda gezilecek yerler. ile daha güzel gezilir.Samsunda gezilecek yerler.  ile daha güzel gezilir.Samsunda gezilecek yerler.  ile daha güzel gezilir.Samsunda gezilecek yerler.  ile daha güzel gezilir.Samsunda gezilecek yerler.  ile daha güzel gezilir.Samsunda gezilecek yerler.  ile daha güzel gezilir.', '17099e780dcb8b26e8f3cbf9320c4a66.png', 2, 1, 1, 0, '2023-09-07 19:19:57'),
+(2, 'Polonya\'da gezilecek yerler', 'adasdasdsa', ' Polonya\'ya gidiyor.ya gidiyor.  gidip gelicek.', '7fd697997c1c31ea4c6715e2ed471ec5.png', 2, 1, 1, 3, '2023-09-09 17:09:41');
 
 -- --------------------------------------------------------
 
@@ -178,7 +174,7 @@ CREATE TABLE `teammember` (
 
 INSERT INTO `teammember` (`id`, `memberName`, `memberPosition`, `memberCv`, `memberPic`, `skills`, `admin`) VALUES
 (1, 'Yavuz Kuk', 'CEO', 'Karabük Üniversitesi Bilgisayar Mühendisliği 3.sınıf öğrencisiyken bu şirketi kurmayı düşünen 2 ortaktan biridir.', 'person.png', '', 1),
-(2, 'Gülde Turhanoğlu', 'CEO', 'Şirketi kuran ortaklardan diğeridir. Kendisi çok düşünceli ve tatlıdır. Kısacası baldırr.', 'person.png', '', 1);
+(2, 'Gülde Turhanoğlu', 'CEO', 'Şirketi kuran ortaklardan diğeridir.', 'person.png', '', 1);
 
 -- --------------------------------------------------------
 
